@@ -1,18 +1,21 @@
 public class StringOps {
-    public String reverse(String str){
-        String reversed="";
-        for(int i=str.length()-1;i>=0;i--){
-            reversed+=str.charAt(i);
+    public String reverse(String str) {
+        String result = "";
+
+        for (int i = str.length() - 1; i >= 0; i--) {
+            result += str.charAt(i);
         }
-        return reversed;
+
+        return result;
     }
-    public int wordcount(String str){
-        int cnt=0;
-        for(int i=0;i<str.length();i++){
-            if(str.charAt(i)==' '){
-                cnt++;
+
+    public int wordCount(String str) {
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == ' ') {
+                count++;
             }
         }
-        return cnt+1;
+        return count + 1;
     }
 }
