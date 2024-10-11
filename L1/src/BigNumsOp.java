@@ -27,14 +27,14 @@ public class BigNumsOp {
         int ok=0;
         for(int i=bigNum2.size()-1;i>=0;i--){
             int newNum=0;
-            if(bigNum.get(i)-ok<bigNum2.get(i)){
+            if(bigNum.get(i)+ok<bigNum2.get(i)){
                 newNum=10-(bigNum2.get(i)-bigNum.get(i));
                 if(ok==0) {
                     ok--;
                 }
             }
             else {
-                newNum = bigNum.get(i) - bigNum2.get(i) - ok;
+                newNum = bigNum.get(i) - bigNum2.get(i) + ok;
                 ok=0;
             }
             result.add(newNum);
@@ -62,15 +62,16 @@ public class BigNumsOp {
     public List<Integer> div(int coeff) {
         List<Integer> result=new ArrayList<>();
         int ok=0;
-        for(int i=bigNum.size()-1;i>=0;i--){
-            int newNum=bigNum.get(i)/coeff-ok;
-            ok=newNum/10;
-            newNum%=10;
+        for(int i=0;i<bigNum.size();i++){
+            int newNum=(bigNum.get(i)+ok*10)/coeff;
+            ok=(bigNum.get(i)+ok*10)%coeff;
             result.add(newNum);
         }
-        if(ok!=0){
-            result.add(ok);
+        int idx=0;
+        while(result.get(idx)==0){
+            result.remove(idx);
+            idx++;
         }
-        return result.reversed();
+        return result;
     }
 }
