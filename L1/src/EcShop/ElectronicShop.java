@@ -4,11 +4,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class ElectronicShop {
-    int budget;
 
-    public ElectronicShop(int budget) {
-        this.budget = budget;
-    }
 
     public int getCheapestKeyboard(Devices keyboards){
         int min=Integer.MAX_VALUE;
@@ -27,7 +23,7 @@ public class ElectronicShop {
         }
         return max;
     }
-    public int mostExpensiveUSBforBudget(Devices usb_units){
+    public int mostExpensiveUSBforBudget(Devices usb_units,int budget){
         int maxUSB_budget=0;
         for(int i=0;i<usb_units.prices.size();i++){
             if(budget-usb_units.prices.get(i)>=0){
@@ -37,7 +33,7 @@ public class ElectronicShop {
         return maxUSB_budget;
     }
 
-    public int mostExpenisiveDevicesforBudget(Devices usb_units,Devices keyboards){
+    public int mostExpenisiveDevicesforBudget(Devices usb_units,Devices keyboards,int budget){
 
         int current=0,max=-1;
         for(int i=keyboards.prices.size()-1;i>=0;i--){
