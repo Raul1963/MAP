@@ -1,4 +1,4 @@
-package EcShop;
+package Aufgabe4;
 
 import java.util.List;
 

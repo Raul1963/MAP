@@ -1,7 +1,4 @@
-package EcShop;
-
-import java.util.Collections;
-import java.util.Comparator;
+package Aufgabe4;
 
 public class ElectronicShop {
 
@@ -33,7 +30,7 @@ public class ElectronicShop {
         return maxUSB_budget;
     }
 
-    public int mostExpenisiveDevicesforBudget(Devices usb_units,Devices keyboards,int budget){
+    public int mostExpenisiveDevicesforBudget(Devices keyboards, Devices usb_units,int budget){
 
         int current=0,max=-1;
         for(int i=keyboards.prices.size()-1;i>=0;i--){

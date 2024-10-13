@@ -1,3 +1,5 @@
+package Aufgabe1;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,12 +24,14 @@ public class University {
     public List<Integer> roundedGrades(){
         List<Integer> roundedGrades= new ArrayList<Integer>();
         for(int i=0;i<grades.size();i++){
-            if(grades.get(i)<=38){
-                roundedGrades.add(grades.get(i));
-                continue;
+            if(grades.get(i)<38){
+                roundedGrades.add(grades.get(i));;
             }
             else if(grades.get(i)%5>=3){
                 roundedGrades.add(grades.get(i)+5-grades.get(i)%5);
+            }
+            else{
+                roundedGrades.add(grades.get(i));
             }
         }
         return roundedGrades;
