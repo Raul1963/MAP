@@ -27,8 +27,7 @@ public class ArrayOp {
         boolean found=false;
         for(int i=0;i<numbers.size();i++){
             if(numbers.get(i)==min && !found){
-                found=true;
-                continue;
+                found=true;;
             }
             else{
                 sum+=numbers.get(i);
@@ -43,7 +42,6 @@ public class ArrayOp {
         for(int i=0;i<numbers.size();i++){
             if(numbers.get(i)==max && !found){
                 found=true;
-                continue;
             }
             else{
                 sum+=numbers.get(i);
