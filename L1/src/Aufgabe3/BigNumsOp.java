@@ -69,11 +69,6 @@ public class BigNumsOp {
             ok=(bigNum.get(i)+ok*10)%coeff;
             result.add(newNum);
         }
-        int idx=0;
-        while(result.get(idx)==0){
-            result.remove(idx);
-            idx++;
-        }
         return result;
     }
 }
